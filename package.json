@@ -1,0 +1,55 @@
+{
+  "name": "@devtor/node-red-ai-agent",
+  "version": "0.1.0",
+  "description": "Node-RED nodes for building AI agents",
+  "author": {
+    "name": "Heitor Carmo",
+    "email": "devtor@devtor.me",
+    "url": "https://www.devtor.me/"
+  },
+  "license": "Apache-2.0",
+  "private": false,
+  "main": "index.js",
+  "type": "commonjs",
+  "homepage": "https://github.com/heitorpc/node-red-ai-agent#readme",
+  "bugs": {
+    "url": "https://github.com/heitorpc/node-red-ai-agent/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/heitorpc/node-red-ai-agent.git"
+  },
+  "files": [
+    "dist",
+    "examples",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "ai",
+    "agent",
+    "llm",
+    "node-red-node"
+  ],
+  "scripts": {
+    "clean": "rimraf dist",
+    "build": "npm run clean && tsc -p tsconfig.json && node scripts/copy-assets.mjs",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "lint": "eslint src",
+    "prepack": "npm run lint && npm run build"
+  },
+  "node-red": {
+    "version": ">=3.0.0",
+    "nodes": {
+      "ai-agent": "dist/nodes/ai-agent/ai-agent.js"
+    }
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^25.5.0",
+    "eslint": "^10.0.3",
+    "rimraf": "^6.1.3",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.57.1"
+  }
+}
