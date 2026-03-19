@@ -1,0 +1,29 @@
+<script type="text/javascript">
+    RED.nodes.registerType("ai-agent", {
+        category: "AI",
+        color: "#E8F0FE",
+        defaults: {
+            name: { value: "" }
+        },
+        inputs: 1,
+        outputs: 1,
+        paletteLabel: "AI Agent",
+        label: function () {
+            return this.name || "AI Agent";
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="ai-agent">
+  <div class="form-row">
+    <label for="node-input-name">
+      <i class="fa fa-tag"></i> Name
+    </label>
+    <input type="text" id="node-input-name" placeholder="AI Agent" />
+  </div>
+</script>
+
+<script type="text/html" data-help-name="ai-agent">
+  <p>Minimal node used to validate repository structure, build pipeline and palette integration.</p>
+  <p>At this stage, it simply forwards the incoming message unchanged.</p>
+</script>
