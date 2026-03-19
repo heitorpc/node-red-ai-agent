@@ -1,0 +1,87 @@
+name: Bug report
+description: Reporte um problema reproduzível no projeto
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Obrigado por reportar um bug.
+        Preencha as informações abaixo com o máximo de precisão possível.
+
+  - type: input
+    id: summary
+    attributes:
+      label: Resumo
+      description: Descreva o problema em uma frase
+      placeholder: O node aparece na palette, mas falha ao fazer deploy
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Passos para reproduzir
+      description: Liste os passos em ordem
+      placeholder: |
+        1. Instalar o pacote
+        2. Abrir o Node-RED
+        3. Arrastar o node
+        4. Fazer deploy
+        5. Observar o erro
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Comportamento esperado
+      placeholder: O flow deveria fazer deploy sem erros
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Comportamento atual
+      placeholder: O runtime lança erro ao carregar o node
+    validations:
+      required: true
+
+  - type: input
+    id: node_red_version
+    attributes:
+      label: Versão do Node-RED
+      placeholder: ex. 3.1.15
+    validations:
+      required: true
+
+  - type: input
+    id: node_version
+    attributes:
+      label: Versão do Node.js
+      placeholder: ex. 20.18.0
+    validations:
+      required: true
+
+  - type: input
+    id: package_version
+    attributes:
+      label: Versão do pacote
+      placeholder: ex. 0.1.0
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs e stack trace
+      description: Cole logs relevantes. Remova segredos antes de enviar.
+      render: shell
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Contexto adicional
+      description: Qualquer detalhe extra que ajude a entender o problema

@@ -1,0 +1,58 @@
+name: Feature request
+description: Proponha uma melhoria ou novo recurso
+title: "[Feature]: "
+labels:
+  - enhancement
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Obrigado por propor uma melhoria.
+        Descreva o problema e a solução sugerida com foco técnico e prático.
+
+  - type: input
+    id: summary
+    attributes:
+      label: Resumo
+      description: Descreva a proposta em uma frase
+      placeholder: Adicionar config node para provedores de chat
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problema que a proposta resolve
+      placeholder: Hoje o node não permite reaproveitar configuração de provider entre múltiplos flows
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Solução proposta
+      placeholder: Criar um config node que concentre provider, model, timeout e credenciais
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternativas consideradas
+      placeholder: Manter tudo no agent node, usar env vars diretamente, etc.
+
+  - type: textarea
+    id: impact
+    attributes:
+      label: Impacto esperado
+      placeholder: Melhora reuso, reduz duplicação e prepara o pacote para múltiplos providers
+
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: Confirmações
+      options:
+        - label: Verifiquei se já não existe uma issue semelhante
+          required: true
+        - label: Esta proposta está alinhada com o objetivo do projeto
+          required: true
