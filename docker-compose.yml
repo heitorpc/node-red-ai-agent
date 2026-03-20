@@ -1,0 +1,17 @@
+version: "3.7"
+
+services:
+  node-red:
+    image: nodered/node-red:latest
+    environment:
+      - TZ=America/Sao_Paulo
+    ports:
+      - "1880:1880"
+    volumes:
+      - node-red-data:/data
+      # Mount the project directory to be automatically loaded by Node-RED
+      - ./:/data/nodes/@devtor/node-red-ai-agent
+    restart: always
+
+volumes:
+  node-red-data:

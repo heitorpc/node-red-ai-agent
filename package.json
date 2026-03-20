@@ -34,6 +34,9 @@
   "scripts": {
     "clean": "rimraf dist",
     "build": "npm run clean && tsc -p tsconfig.json && node scripts/copy-assets.mjs",
+    "dev": "tsc -w -p tsconfig.json",
+    "test:docker": "npm run build && docker compose up",
+    "test:local": "npm run build && mkdir -p ./.node-red-env && cd ./.node-red-env && npm i ../ && cd .. && npx node-red -u ./.node-red-env",
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "lint": "eslint src",
     "prepack": "npm run lint && npm run build"
