@@ -36,3 +36,4 @@ Thumbs.db
 
 # local test/runtime folders
 .node-red-test/
+.node-red-env/
